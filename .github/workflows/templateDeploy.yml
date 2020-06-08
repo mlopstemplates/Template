@@ -27,3 +27,4 @@ jobs:
         azcliversion: 2.6.0
         inlineScript: |
           az deployment group create --resource-group $RESOURCE_GROUP --template-file $TEMPLATE_FILE --parameters azuredeploy.params.json
+          az functionapp config appsettings set --name fappdeploypmzqf --resource-group myResourceGroup --settings "PATTOKEN=123456789"
