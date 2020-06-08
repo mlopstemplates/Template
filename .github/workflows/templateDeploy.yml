@@ -26,5 +26,5 @@ jobs:
       with:
         azcliversion: 2.6.0
         inlineScript: |
-          az deployment group create --resource-group $RESOURCE_GROUP --template-file $TEMPLATE_FILE --parameters azuredeploy.params.json
-          az functionapp config appsettings set --name fappdeploypmzqf --resource-group $RESOURCE_GROUP --settings "PATTOKEN=123456789"
+          chmod +x $GITHUB_WORKSPACE/sampleScript.sh
+          $GITHUB_WORKSPACE/sampleScript.sh
