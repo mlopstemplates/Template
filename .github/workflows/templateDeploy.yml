@@ -15,4 +15,4 @@ jobs:
       uses:  mlopstemplates/templateDeploy@master
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-          resource_group: "new1"
+          resource_group: "new"
