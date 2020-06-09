@@ -1,6 +1,5 @@
 on: [push]
 
-
 name: AzureCLISampleForFile
 
 jobs:
