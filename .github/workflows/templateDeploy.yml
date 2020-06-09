@@ -12,7 +12,7 @@ jobs:
     
     - name: deploy all resources
       id: aml_configure
-      uses:  mlopstemplates/templateDeploy@v2
+      uses:  mlopstemplates/templateDeploy@master
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
           resource_group: "new1"
