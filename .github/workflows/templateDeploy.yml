@@ -9,12 +9,12 @@ jobs:
     - name: Check Out Repository
       id: checkout_repository
       uses: actions/checkout@v2
-      with:
-        repository: mlopstemplates/templateDeploy@master
     
     - name: deploy all resources
       id: aml_configure
-      uses:  mlopstemplates/templateDeploy@master
+      uses: mlopstemplates/aml_configure@master
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          armtemplate_file: "deploy.json"
+          armtemplateparams_file: "deploy.params.json"
           resource_group: "new"
