@@ -7,24 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - name: Azure Login
-      uses: azure/login@v1
+    - name: deploy all resources
+      id: aml_configure
+      uses:  mlopstemplates/templateDeploy 
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Checkout
-      uses: actions/checkout@v1
-    
-    - name: Setup environment
-      run: |
-        chmod +x ./configuration.sh
-        ./configuration.sh      
-    
-
-    - name: Azure CLI script file
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.6.0
-        inlineScript: |
-          chmod +x $GITHUB_WORKSPACE/sampleScript.sh
-          $GITHUB_WORKSPACE/sampleScript.sh
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          resource_group: "new1"
