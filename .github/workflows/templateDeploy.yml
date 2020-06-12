@@ -13,7 +13,7 @@ jobs:
  
     - name: deploy all resources
       id: aml_configure
-      uses:  mlopstemplates/templateDeploy @master
+      uses:  mlopstemplates/templateDeploy@master
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
           armtemplate_file: "deploy.json"
